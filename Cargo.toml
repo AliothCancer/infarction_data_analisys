@@ -1,0 +1,10 @@
+[package]
+name = "infarction_data_analisys"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+csv = "1.3.0"
+itertools = "0.13.0"
+plotpy = "1.4.0"
+serde = { version = "1.0.208", features = ["derive"] }
