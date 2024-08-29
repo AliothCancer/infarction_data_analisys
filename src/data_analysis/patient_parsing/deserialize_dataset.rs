@@ -20,6 +20,7 @@ pub struct OutputSchema {
     bmi: f64,
     sintomo: String,
     fattori_di_rischio: String,
+    
     // RISCHIO
     pre_test: usize,  // rischio stimato pre
     post_test: usize, // rischio stimato post
