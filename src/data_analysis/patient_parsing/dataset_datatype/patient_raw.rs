@@ -28,7 +28,7 @@ pub struct PatientRaw {
 }
 
 pub fn create_refined_csv(rusty_patients: Vec<Patient>) {
-    let file_path = DATA_PATH.to_string() + "refined_data.csv";
+    let file_path = DATA_PATH.to_string() + "/refined/refined_data.csv";
     let mut writer = csv::Writer::from_path(file_path).expect("creating the writer");
 
     for paz in rusty_patients.into_iter() {

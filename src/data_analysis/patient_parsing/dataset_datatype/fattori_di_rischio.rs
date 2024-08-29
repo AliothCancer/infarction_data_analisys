@@ -43,6 +43,10 @@ impl FattoriDiRischio {
         }
         FattoriDiRischio(frc)
     }
+    
+    pub(crate) fn to_string(&self) -> String {
+        self.0.iter().map(|x| x.to_string()).join(",").into()
+    }
 }
 
 #[derive(Debug, PartialEq, PartialOrd, Serialize, Hash, Eq)]

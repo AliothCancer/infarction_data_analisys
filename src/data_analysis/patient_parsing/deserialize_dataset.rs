@@ -19,7 +19,7 @@ pub struct OutputSchema {
     kg: f64,
     bmi: f64,
     sintomo: String,
-
+    fattori_di_rischio: String,
     // RISCHIO
     pre_test: usize,  // rischio stimato pre
     post_test: usize, // rischio stimato post
@@ -93,6 +93,7 @@ impl OutputSchema {
             kg: paz.kg,
             bmi: paz.bmi,
             sintomo: paz.sintomi.inner()[0].to_string(),
+            fattori_di_rischio: paz.fattori_di_rischio.to_string(),
 
             // RISCHIO INFARTO
             pre_test: match_risk(paz.pre_test),
