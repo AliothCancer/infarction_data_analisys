@@ -16,7 +16,7 @@ impl Sintomi {
     }
 }
 
-#[derive(Debug, Serialize, Clone)]
+#[derive(Debug, Serialize, Clone, PartialEq, Eq)]
 pub enum Sintomo {
     Angina,
     Astenia,

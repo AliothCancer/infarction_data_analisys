@@ -1,8 +1,8 @@
 use super::dataset_datatype::{patient::Patient, patient_raw::PatientRaw};
 
 pub fn read_file() -> Vec<Patient> {
-    let csv_path_input = "../../dati/ready_to_work_data.csv";
-    let _csv_path_output = "../../dati/data_refined.csv";
+    let csv_path_input = "../dati/ready_to_work_data.csv";
+    let _csv_path_output = "../dati/data_refined.csv";
 
     let data = std::fs::read_to_string(csv_path_input);
     let data = match data {

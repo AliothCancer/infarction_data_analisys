@@ -66,6 +66,6 @@ pub fn plot_frc_numb_dist_with_subcat() {
     plot.add(&bar)
         .set_title("Number of risk factor by patient number of risk factor")
         .legend()
-        .save_and_show("/home/giulio/Scrivania/doc_barplot_2.svg")
+        .show("/home/giulio/Scrivania/doc_barplot_2.svg")
         .unwrap();
 }

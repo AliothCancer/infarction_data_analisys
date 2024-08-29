@@ -73,3 +73,15 @@ pub fn  frc_numb_dist_with_subcat() -> Vec<(u8, Vec<(String, usize)>)>{
 
 
 
+pub fn frc_frequency_classification() -> HashMap<String, usize> {
+    let patients = read_file();
+    let mut frc_freq = FattoreRischio::generate_hashmap();
+
+    for paz in patients.into_iter() {
+        for frc in paz.fattori_di_rischio.0.iter() {
+            *frc_freq.get_mut(&frc.to_string()).unwrap() += 1
+        }
+    }
+
+    frc_freq
+}
