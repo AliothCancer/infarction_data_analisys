@@ -1,3 +1,7 @@
+
+
+use std::fmt::Display;
+
 use serde::Serialize;
 
 #[derive(Debug, PartialEq, PartialOrd, Clone, Copy, Serialize)]
@@ -14,5 +18,11 @@ impl Rischio {
             "basso" => Some(Rischio::Basso),
             _ => None,
         }
+    }
+}
+
+impl Display for Rischio{
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f,"{:?}", self)
     }
 }

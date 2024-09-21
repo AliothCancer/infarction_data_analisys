@@ -4,6 +4,8 @@ pub fn read_file() -> Vec<Patient> {
     let csv_path_input = "../dati/ready_to_work_data.csv";
     let _csv_path_output = "../dati/data_refined.csv";
 
+    println!("Reading data from {}", csv_path_input);
+
     let data = std::fs::read_to_string(csv_path_input);
     let data = match data {
         Ok(inner) => inner,

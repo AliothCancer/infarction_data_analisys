@@ -2,11 +2,11 @@
 
 use serde::{Deserialize, Serialize};
 
-use crate::data_analysis::constants::DATA_PATH;
+use crate::data_analysis::{constants::DATA_PATH, patient_parsing::deserialize_dataset::deserialize_dataset::OutputSchema};
 
 use super::patient::Patient;
 
-use super::super::deserialize_dataset::OutputSchema;
+
 
 // I campi devono essere gli stessi delle chiavi del dict SCHEMA che si trova in
 // "/home/giulio/Scrivania/materiale-universita/TIROCINIO/analisi_dati/pycode/my_py_modules/local_utils.py"
@@ -27,16 +27,7 @@ pub struct PatientRaw {
     pub post_test: String, // rischio stimato post
 }
 
-pub fn create_refined_csv(rusty_patients: Vec<Patient>) {
-    let file_path = DATA_PATH.to_string() + "/refined/refined_data.csv";
-    let mut writer = csv::Writer::from_path(file_path).expect("creating the writer");
 
-    for paz in rusty_patients.into_iter() {
-        let paz = OutputSchema::from_patient(paz);
-        writer.serialize(paz).expect("wrinting patient");
-    }
-    writer.flush().expect("flushing");
-}
 
 pub fn is_wrong_value(value: &str) -> bool {
     let values = value.split(",").map(|x| x.trim().to_lowercase());

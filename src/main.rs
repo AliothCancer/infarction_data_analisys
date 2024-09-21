@@ -1,11 +1,11 @@
 
-use infarction_data_analisys::data_analysis::{data_elaborations::frc_frequency_classification, patient_parsing::{dataset_datatype::patient_raw::create_refined_csv, serialize_dataset::read_file}};
+use infarction_data_analisys::data_analysis::{data_elaborations::frc_frequency_classification, patient_parsing::{deserialize_dataset::deserialize_dataset::create_refined_csv, serialize_dataset::read_file}};
 use itertools::Itertools;
 use prettytable::{cell, row};
 
 fn main(){
     let rusty_patient = read_file();
-    create_refined_csv(rusty_patient);
+    create_refined_csv(rusty_patient, false);
 }
 
 
